@@ -1,0 +1,71 @@
+:root {
+  /* ===== Kawaii Future palette ===== */
+  /* Base */
+  --milk: #fff7fb;        /* page background */
+  --cream: #fff0f6;       /* soft alt background */
+  --cotton: #f3edff;      /* lavender-tinted surface */
+  --whip: #ffffff;        /* card surface */
+
+  /* Text */
+  --ink: #3d2b50;         /* primary text — deep berry violet */
+  --ink-soft: #7a6a8f;    /* secondary text */
+  --ink-faint: #a395b8;   /* tertiary / captions */
+
+  /* Accents */
+  --sakura: #ff8fc7;      /* primary action */
+  --sakura-deep: #ff6cb5; /* primary hover */
+  --lavender: #a78bfa;    /* links / focus rings */
+  --mint: #5fe3ad;        /* success */
+  --peach: #ffab76;       /* high-priority CTA */
+  --sky: #7dd3fc;
+  --lemon: #ffd966;
+
+  /* Borders */
+  --border: #ffdff0;
+  --border-lav: #e6dfff;
+
+  /* Colored glows (shadows are never black) */
+  --glow-pink: rgba(255, 143, 199, 0.35);
+  --glow-lav: rgba(167, 139, 250, 0.3);
+  --glow-mint: rgba(95, 227, 173, 0.3);
+  --glow-peach: rgba(255, 171, 118, 0.35);
+
+  /* Syntax highlighting (pastel code theme) */
+  --code-bg: #fff4fa;
+  --syntax-keyword: #f472b6;
+  --syntax-string: #34d399;
+  --syntax-function: #8b7cf6;
+  --syntax-comment: #b8a8c8;
+
+  /* Radii — squishy scale */
+  --radius-badge: 10px;
+  --radius-button: 16px;
+  --radius-input: 16px;
+  --radius-code: 20px;
+  --radius-card: 28px;
+  --radius-pill: 999px;
+
+  /* Spacing — 4px base scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Layout */
+  --max-w: 1200px;
+  --nav-h: 72px;
+
+  /* Type */
+  --font: "M PLUS Rounded 1c", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "Hiragino Maru Gothic ProN", Meiryo, sans-serif;
+  --font-pixel: "DotGothic16", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
