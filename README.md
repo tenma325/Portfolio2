@@ -1,114 +1,143 @@
-# devepopment — kawaii future dev lab
+# 内科クリニック 新規ホームページ制作案
 
-パステル × kawaii future な個人開発ポートフォリオ&実験ラボ。
-ダークなデベロッパーUI(Convex 風)を出発点に、**色を反転**して「ミルクピンク × ラベンダー × ミント」の世界線で再構築しました。
+## これまでの対応内容
 
-> サイト名: **devepopment** (development × pop)
-> Tagline: つくる楽しさに、ときめきを。
+Obsidian note `内科クリニックの新規ホームページ制作.md` の内容に沿って、内科クリニック向けの新規ホームページを作成しました。
 
-## ✨ 特徴
+主な対応内容は以下です。
 
-- **Kawaii Future デザインシステム** — `src/tokens.css` / `src/tokens.ts` にトークン集約
-  - ミルクピンク `#fff7fb` 背景、Berry 紫 `#3d2b50` テキスト(純黒禁止)
-  - 影は **カラーグロー** のみ。黒影は使わない
-  - 角丸 16–32px の **ぷにぷに** シェイプ
-  - すべてのインタラクションは **squish**(hover `scale(1.06)` / active `scale(0.94)`、イージング `cubic-bezier(0.34, 1.56, 0.64, 1)`)
-  - 常時アニメ: blob-morph / float / gradient-pan / marquee-scroll / sparkle
-  - `prefers-reduced-motion: reduce` で必ず無効化
-- **2 ページ構成** — ハッシュルーティング(`#/lab`)で軽量に
-  - `/` : ホーム(ヒーロー / つくったもの / すうじ / スタック / CTA)
-  - `/lab` : ラボ(サイトのなりたち・デザイン原則・これから)
-- **AI 連携** — Ollama に専用の `kawaii-design` モデルを登録して、デザイン相談が可能(下記参照)
+- 内科クリニック向けの5ページ構成サイトを作成
+  - トップページ
+  - クリニック紹介
+  - 診療案内
+  - 地図・アクセス
+  - Web予約・お問い合わせ
+- 緑系・健康的・ナチュラルな印象のデザインに調整
+- スマホ・PCのレスポンシブ表示に対応
+- Google Mapを配置
+- Web予約システムを後日埋め込める枠を設置
+- WordPressテーマ化用の下地も作成
+- GitHub上のzip配布は中止
+- GitHub Pagesで閲覧できる公開URLへ切り替え
+- 診療案内や特徴リストの緑アイコンを、CSSアニメーション付きの医療系アイコンへ変更
 
-## 🛠 スタック
+## 公開URL
 
-- Vite 8 / React 19 / TypeScript
-- framer-motion 12(ページ内アニメーション)
-- lucide-react(アイコン)
-- フォント: **M PLUS Rounded 1c**(本文/見出し)+ **DotGothic16**(ピクセルアクセント)
-- Ollama(任意の AI アシスタント連携)
+以下のURLからサイトを確認できます。
 
-## 🚀 開発
+`https://tenma325.github.io/devepopment/`
 
-```bash
-npm install
-npm run dev          # 開発サーバー (Vite)
-npm run build        # プロダクションビルド (tsc -b && vite build)
-npm run preview      # ビルド結果のプレビュー (http://localhost:4173)
-npm run lint         # ESLint
-```
+## GitHubリポジトリ
 
-> ℹ️ Vite preview は既定で IPv6 `::1` のみ LISTEN します。`http://[::1]:4173/` を使ってください。
-> 旧 IPv4 で見たい場合は `npm run preview -- --host` または `vite.config.ts` で `server.host` を設定してください。
+`https://github.com/tenma325/devepopment`
 
-## 🤖 Ollama 連携(任意)
+公開範囲：Public（一般公開）
 
-`Modelfile` を同梱しています。デザインシステムをまるごと覚えたローカル LLM アシスタントです。
+## 配布について
 
-```bash
-# ベースモデルを取得(例: gemma4:12b)
-ollama pull gemma4:12b
+GitHub Releaseでのzip配布は中止しました。
 
-# Modelfile からモデルを作成
-ollama create kawaii-design -f Modelfile
+現在はzip配布ではなく、以下のGitHub Pages URLでサイトを閲覧する運用です。
 
-# 実行
-ollama run kawaii-design
-```
+`https://tenma325.github.io/devepopment/`
 
-質問例:
+## サイトの開き方
 
-> プライマリボタンの背景色とホバー時の動きを一行で教えて
+### 公開URLで見る
 
-→ `背景はさくら (#ff8fc7) を使用し、ホバー時に cubic-bezier(0.34, 1.56, 0.64, 1) のイージングを伴う scale(1.06) のスクイッシュ (squish) を適用します。`
+1. ブラウザで `https://tenma325.github.io/devepopment/` を開きます。
+2. トップページが表示されます。
+3. ヘッダーのメニューから各ページへ移動できます。
 
-## 🎨 カラーパレット(抜粋)
+確認できるページ：
 
-| 用途 | 名前 | 値 |
-| :--- | :--- | :--- |
-| 背景 | ミルク | `#fff7fb` |
-| プライマリ | さくら | `#ff8fc7` |
-| リンク/フォーカス | ラベンダー | `#a78bfa` |
-| 成功 | ミント | `#5fe3ad` |
-| CTA | ピーチ | `#ffab76` |
-| テキスト | インク(ベリー紫) | `#3d2b50` |
+- トップ
+- クリニック紹介
+- 診療案内
+- アクセス
+- Web予約・お問い合わせ
 
-詳細は [`src/tokens.css`](./src/tokens.css) を参照。
+### ローカルで見る
 
-## 📂 ディレクトリ構成
+このリポジトリでは、GitHub Pagesの配信対象を `clinic-site/` にしています。
 
-```
-kawaii-site/
-├── Modelfile              # Ollama 用デザインシステム
-├── index.html
-├── package.json
-├── src/
-│   ├── App.tsx            # ホーム(ルーティング含む)
-│   ├── Lab.tsx            # ラボページ
-│   ├── main.tsx
-│   ├── motion.ts          # framer-motion variants
-│   ├── tokens.css         # CSS 変数(SSOT)
-│   ├── tokens.ts          # TS トークン
-│   └── index.css          # グローバル + 全コンポーネント
+ローカルで確認する場合：
+
+1. リポジトリをcloneまたはダウンロードします。
+2. `clinic-site/index.html` をブラウザで開きます。
+
+各ページのファイル：
+
+- `clinic-site/index.html` — トップページ
+- `clinic-site/about.html` — クリニック紹介
+- `clinic-site/services.html` — 診療案内
+- `clinic-site/access.html` — 地図・アクセス
+- `clinic-site/reservation.html` — Web予約・お問い合わせ
+
+## デザイン修正内容
+
+当初、各項目は緑色のシンプルなアイコン表現でしたが、以下のように変更しました。
+
+- 診療カードに医療系アイコンを追加
+  - 聴診器
+  - ハート
+  - 盾
+  - 注射器
+  - 問診票
+  - 体温計
+  - メモ
+- 特徴リストに丸型の小さなアニメーションアイコンを追加
+- CSSアニメーションを追加
+  - やわらかいパルス
+  - ふわっと浮く動き
+  - 光沢が流れるハイライト
+
+## ファイル構成
+
+```text
+devepopment/
+├── clinic-site/
+│   ├── index.html
+│   ├── about.html
+│   ├── services.html
+│   ├── access.html
+│   ├── reservation.html
+│   └── assets/
+│       ├── styles.css
+│       └── main.js
+├── .github/workflows/deploy.yml
 └── README.md
 ```
 
-## 📝 開発プロセス
+## GitHub Pages設定
 
-Obsidian Vault の `Projects/Kawaii Future Design System` に設計の Single Source of Truth を保存しています。
-開発セッションログは `★devepopment.md` を参照。
-
----
-
-© 2026 devepopment — made with ♥ and pastel
-# GitHub Pages 公開内容
-
-このリポジトリのGitHub Pagesでは、`clinic-site/` 配下の内科クリニック新規ホームページ制作案を公開しています。
+GitHub Pagesは `.github/workflows/deploy.yml` により、`clinic-site/` を公開対象としてデプロイします。
 
 公開URL：
 
 `https://tenma325.github.io/devepopment/`
 
-現在、GitHub Releaseでのzip配布ではなく、上記URLで閲覧する運用です。
+## 差し替えが必要な仮情報
 
----
+実運用前に以下を差し替えてください。
+
+- クリニック名
+- 住所
+- 電話番号
+- 最寄り駅
+- 診療時間
+- 休診日
+- 駐車場案内
+- Google Map の実際の埋め込み先
+- Web予約サービスの埋め込みコード
+- 医師紹介
+- ロゴ
+- 実写真
+- 正式な診療科目
+
+## 注意点
+
+- 現在のGoogle Mapは仮の場所を表示しています。
+- Web予約欄は後日埋め込み用のプレースホルダーです。
+- WordPressテーマ下地は元リポジトリ `internal-medicine-clinic-hp` 側に残しています。
+- この `devepopment` リポジトリでは、GitHub Pagesで表示するための静的サイト一式を `clinic-site/` に配置しています。
