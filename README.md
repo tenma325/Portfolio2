@@ -101,3 +101,14 @@ Obsidian Vault の `Projects/Kawaii Future Design System` に設計の Single So
 ---
 
 © 2026 devepopment — made with ♥ and pastel
+# GitHub Pages 公開内容
+
+このリポジトリのGitHub Pagesでは、`clinic-site/` 配下の内科クリニック新規ホームページ制作案を公開しています。
+
+公開URL：
+
+`https://tenma325.github.io/devepopment/`
+
+現在、GitHub Releaseでのzip配布ではなく、上記URLで閲覧する運用です。
+
+---
